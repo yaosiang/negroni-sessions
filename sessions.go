@@ -123,6 +123,13 @@ func GetSession(req *http.Request) Session {
 	return nil
 }
 
+func GetInternalSession(req *http.Request) *sessions.Session {
+	if s, ok := req.Context().Value(sessionKey).(*session); ok {
+		return s.session
+	}
+	return nil
+}
+
 func (s *session) Get(key interface{}) interface{} {
 	sess := s.Session()
 	if sess == nil {
