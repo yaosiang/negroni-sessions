@@ -78,7 +78,7 @@ type Session interface {
 	// A single variadic argument is accepted, and it is optional: it defines the flash key.
 	// If not defined "_flash" is used by default.
 	Flashes(vars ...string) []interface{}
-	// Options sets confuguration for a session.
+	// Options sets configuration for a session.
 	Options(Options)
 }
 
